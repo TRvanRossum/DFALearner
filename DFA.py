@@ -14,4 +14,10 @@ class DFA(object):
         self.alphabet = _alphabet
         self.transitions = dict()
 
-    
+    def add_transition(self, start_state, letter, end_state):
+        self.states.add(start_state)
+        self.states.add(end_state)
+
+        key = (start_state, letter)
+        self.transitions[key] = end_state
+
